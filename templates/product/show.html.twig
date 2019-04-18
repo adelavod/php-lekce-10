@@ -23,6 +23,13 @@
                 <th>Description</th>
                 <td>{{ product.description }}</td>
             </tr>
+            <tr>
+                <th>manufacturer</th>
+                <td>{% if product.manufacturer.name is defined %}
+                        {{ product.category.name }}
+                    {% endif %}
+                </td>
+            </tr>
         </tbody>
     </table>
 
