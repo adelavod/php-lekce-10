@@ -13,7 +13,8 @@
                 <th>Price</th>
                 <th>Description</th>
                 <th>Category</th>
-
+                <th>Manufacturer</th>
+                <th>Supplier</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -25,9 +26,21 @@
                 <td>{{ product.price }}</td>
                 <td>{{ product.description }}</td>
                 <td>
-                    {% if product.manufacturer.name is defined %}
+                    {% if product.category.name is defined %}
                     {{ product.category.name }}
                 {% endif %}</td>
+                <td>
+                    {% if product.manufacturer.name is defined %}
+                        {{ product.manufacturer.name }}
+                    {% endif %}</td>
+                <td>
+                    {% for supplier in product.supplier %}
+                    {{ supplier.name }}
+                    {% if not loop.last %}
+                    <br>
+                    {% endif %}
+                    {% endfor %}
+                </td>
 
                 <td>
                     <a href="{{ path('product_show', {'id': product.id}) }}">show</a>

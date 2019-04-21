@@ -30,6 +30,16 @@
                     {% endif %}
                 </td>
             </tr>
+            <tr>
+                <th>Supplier</th>
+                <td>{% for supplier in product.supplier %}
+                        {{ supplier.name }}
+                        {% if not loop.last %}
+                        <br>
+                        {% endif %}
+                    {% endfor %}
+                </td>
+            </tr>
         </tbody>
     </table>
 
