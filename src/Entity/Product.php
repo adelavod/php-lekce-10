@@ -106,6 +106,7 @@ class Product
         return $this;
     }
 
+
     public function getManufacturer(): ?Manufacturer
     {
         return $this->manufacturer;

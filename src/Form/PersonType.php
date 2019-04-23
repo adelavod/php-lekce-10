@@ -24,10 +24,18 @@ class PersonType extends AbstractType
                 ]
             ])
             ->add('age')
+
             ->add('mother', EntityType::class,
-                ['class'=>Person::class, 'choice_label' => 'name'])
+                ['class'=>Person::class,
+                    'choice_label'=> 'name',
+                    'expanded' => true,
+                    'required'=>false])
+
             ->add('father', EntityType::class,
-                ['class'=>Person::class, 'choice_label' => 'name'])
+                ['class'=>Person::class,
+                    'choice_label'=> 'name',
+                    'expanded' => true,
+                    'required'=>false])
         ;
     }
 
